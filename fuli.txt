@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<math.h>
+main(){
+	double f,p,i;
+	int n;
+	printf("请输入本金：");
+	scanf("%lf",&p);
+	printf("请输入年利率（百分比）：");
+	scanf("%lf",&i);
+	printf("请输入存储年限：");
+	scanf("%d",&n);
+	f = p*(pow(1+i/100,n));
+	printf("复利终值为：%0.2lf\n",f);
+}
