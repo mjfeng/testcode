@@ -1,0 +1,63 @@
+
+#include<stdio.h>
+#include<math.h>
+void Jisuan();
+double p,i,f;
+int n;
+void Input()
+{
+	printf("\t\t|----------------------------------------|\n");
+	printf("\t\t|               录入信息                 |\n");
+	printf("\t\t|----------------------------------------|\n");
+	printf("请输入本金：");
+	scanf("%lf",&p);
+	printf("请输入年利率（百分比）：");
+	scanf("%lf",&i);
+	printf("请输入存储年限：");
+	scanf("%d",&n);
+}
+
+void Jisuan()
+{
+	int m;
+	printf("\t\t|----------------------------------------|\n");
+    printf("\t\t|    请选择复利计算（1）单利计算（2）：  |\n");
+	printf("\t\t|----------------------------------------|\n");
+	scanf("请选择：%d",&m);
+	if(m==1){
+		Input();
+		f = p*(pow(1+i/100,n));
+		printf("复利终值为：%0.2lf\n",f);
+	}
+	if(m==2){
+		Input();
+		f = p+p*(i/100)*n;
+		printf("单利终值为：%0.2lf\n",f);
+	}
+}
+
+void Need()
+{
+	printf("请输入目标金额：");
+	scanf("%lf",&f);
+	printf("请输入目标利率：");
+	scanf("%lf",&i);
+	printf("请输入目标年限：");
+	scanf("%d",&n);
+	p = f/pow(i+(i/100),n);
+	printf("需要投入的本金为：%lf",p);
+}
+
+void Mainframe()
+{
+
+    //printf("\t\t|----------------------------------------|\n");
+	//printf("\t\t|             本金需求计算               |\n");
+	//printf("\t\t|----------------------------------------|\n");
+	//Need();
+	
+}
+main(){
+	Input();
+	Jisuan();
+}
